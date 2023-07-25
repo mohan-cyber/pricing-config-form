@@ -27,16 +27,19 @@ const PricingConfigList = () => {
       <ul className="text-xl flex flex-col justify-center items-center">
         {pricingConfigs.map((config) => (
           <li className="py-5" key={config.id}>
-            {config.day_of_week} -{" "}
-            <Link to={`/edit/${config.id}`}>
-              {" "}
+            {config.day_of_week} -
+            <Link className="p-4" to={`/edit/${config.id}`}>
+              
               <button class="bg-gray-300 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-l">
                 Edit
               </button>
-            </Link>{" "}
-            | <Link to={`/delete/${config.id}`}><button class="bg-gray-300 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-l">
+            </Link>
+            |
+            <Link to={`/delete/${config.id}`}>
+              <button className="p-4" class="bg-gray-300 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-l">
                 Delete
-              </button></Link>
+              </button>
+            </Link>
           </li>
         ))}
       </ul>
